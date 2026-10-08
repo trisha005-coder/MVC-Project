@@ -1,9 +1,18 @@
+
 @{
     ViewData["Title"] = "Profile Ni Joanna";
+    MVC_Project.Models.JProfileViewModel profile = Model;
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    <h1> Hello Hello !!! </h1>
+    <h1> @profile.Name </h1>
+    @foreach (dynamic q in ViewBag.Quotes)
+    {
+    <blockquote>
+        @q.Quote
+        <footer>@q.Author</footer>
+    </blockquote>
+    }
 </div>
