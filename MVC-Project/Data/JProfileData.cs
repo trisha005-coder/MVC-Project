@@ -122,17 +122,6 @@ namespace MVC_Project.Data
                 },
                 new JProjectModel
                 {
-                    ProjectTitle = "1agoon",
-                    Context = "AWSCC PUP Solar Power Hackathon",
-                    ProjDescription = "A menu web app for food stalls and services in the PUP Sta. Mesa Lagoon area.",
-                    Technologies = {"React", "AWS (S3, ECR, Lambda)", "Supabase"},
-                    TeamSize = 4,
-                    TeamName = "4VATARS",
-                    TeamRole = "Backend Developer",
-                    Year = 2025
-                },
-                new JProjectModel
-                {
                     ProjectTitle = "The Hanged Man",
                     Context = "GDG PUP CTRL+CREATE: Game Jam",
                     ProjDescription = "A story-rich 2D pixel psychological horror puzzle game prototype. Won Best in Art Direction.",
