@@ -1,0 +1,46 @@
+/* CSS for Profile view */
+.profile-container{
+    max-width: 1100px;
+    margin: 3rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #440496;
+    padding: 4px 7px 2px 4px;
+}
+
+.profile-header{
+    background: #00ffff;
+    border-radius: 50rem;
+    overflow: hidden;
+    box-shadow:rgb(1, 23, 129) 0 10px 10px;
+    margin-bottom: 3rem;
+}
+
+.profile-avatar-row{
+    display: flex;
+    align-items: flex-end;
+    padding: 0rem 3rem 3rem 3rem;
+    margin-top: -70px;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: #58cdfa;
+    background-color: #440496;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}

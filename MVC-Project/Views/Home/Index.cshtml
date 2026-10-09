@@ -1,8 +1,87 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trisha's Profile";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/wwwroot/css/Index.css" />
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to my profile!</h1>
+    <p>You will see my profile and future works on this webpage.</p>
 </div>
+<div class="text-left">
+    <h2>What can you expect from this site?</h2>
+    <p>This site will showcase my blogs in my life, as well as my latest projects. So stay tuned!</p>
+    <hr />
+    <h3>My First Experience</h3>
+    <p>Designing your own website can be difficult at first, but you will easily get it one by one if you know the concepts.</p>
+</div>
+<div class="blog-card">
+    <div class="blog-image-wrapper">
+        <img src="~/Images/Screenshot 2026-10-09 170953.png" alt="Blog Post Topic" asp-append-version="true" />
+    </div>
+
+    <div class="blog-information">
+        <h4 class="blog-title">Trying to Make My First Calculator</h4>
+        <p>I have dreams making a simple project but I always hesitate whether it will go or not. So, I tried building a Python calculator and fortunately, it worked.</p>
+        <p>I will try more but first, this is the calculator with exponent operation.</p>
+    </div>
+</div>
+
+<style>
+    .blog-card {
+    display: flex;
+    background-color: #001b85;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 4px 15px;
+    margin: 30px 0;
+    overflow: hidden;
+    border: 1px solid #0290c6;
+}
+
+.blog-image-wrapper{
+    flex: 0 0 35%;
+    min-width: 250px;
+    background-color:#fadcdc;
+}
+
+.blog-image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-information{
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.blog-title{
+    font-size: 1rem;
+    margin: 0 0 12px 0;
+    color: #fadcdc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #58cdfa;
+    background-color: #001b85;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+</style>
