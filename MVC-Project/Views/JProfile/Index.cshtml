@@ -4,15 +4,136 @@
     MVC_Project.Models.JProfileViewModel profile = Model;
 }
 
-<h1>@ViewData["Title"]</h1>
+<styles>
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+</styles>
 
-<div>
-    <h1> @profile.Name </h1>
-    @foreach (dynamic q in ViewBag.Quotes)
+@* ------- Section 1 - Title  *@
+
+<div class="container" background-color="lightgrey">
+@* About Joanna Titles Section 1.1: name with switching title/roles *@
+ <div class="intro-name">
+    <h1>
+        @profile.Name, a
+        <div class="switching-titles">
+            @foreach (string title in ViewBag.Titles)
+            {
+                <span>@title <br /></span>
+            }
+        </div>
+    </h1>
+</div>
+
+@* Favorite Quotes Section 1.2: w/ arrows that let user click through quote list *@
+<style>
+    .carousel.item {
+        height:32rem;
+        position: relative;
+    }
+    .carousel-item-content {
+        position: relative;
+        text-align: center;
+    }
+</style>
+
+<div id="quoteCarousel" class="carousel slide" @* data-bs-ride="carousel" *@>
+    <div class="carousel-inner">
+        @{ int item = 0;}
+        @foreach (dynamic q in ViewBag.Quotes)
+        {
+            <div class="carousel-item @(item == 0 ? "active" : "")">
+                <div class="carousel-item-content">
+                    <blockquote>
+                        @q.Quote
+                        <footer>@q.Author</footer>
+                    </blockquote>
+                </div>
+            </div>
+            item++;
+        }
+    </div>
+ </div>
+</div>
+
+@* ------- Section 2 - Infoboxes  *@
+
+@* General Info Box Section 2.1: in a 5x1 line table *@
+<style>
+    th {
+        text-align: center;
+    }
+</style>
+<div class="general-infobox">
+    <table>
+        <tr><th colspan="2">General Information</th></tr>
+        <tr><th colspan="2">*insertpicture here*</th></tr>
+        <tr>
+            <td>Name</td>
+            <td>@profile.Name</td>
+        </tr>
+        <tr>
+            <td>Major</td>
+            <td>@profile.Major</td>
+        </tr>
+        <tr>
+            <td>Education</td>
+            <td>@profile.Education</td>
+        </tr>
+        <tr>
+            <td>Languages</td>
+            <td>@string.Join(", ", profile.Languages)</td>
+        </tr>
+        <tr>
+            <td>Programming Languages</td>
+            <td>@string.Join(", ", profile.PLanguages)</td>
+        </tr>
+    </table>
+</div>
+
+@* Status Section 2.2.1: big section for currently learning *@
+<div class="status-section">
+    <h3>Currently Learning:
+        <span>@ViewBag.Status</span>
+    </h3>
+</div>
+
+@* Interests Section 2.2.2: list of interests *@
+<div class="interests-section">
+    <h3>Interests:</h3>
+    @foreach (var i in profile.Interests)
+        {
+            <span>
+                @i.Interest
+                <ul>
+                    @foreach (string detail in i.Details)
+                    {
+                        <li>@detail</li>
+                    }
+                </ul>
+            </span>
+        }
+</div>
+
+@* ------- Section 3 - Project Gallery  *@
+<div class="project-gallery">
+    <h3>Project Gallery:</h3>
+    @foreach (var p in profile.Projects)
     {
-    <blockquote>
-        @q.Quote
-        <footer>@q.Author</footer>
-    </blockquote>
+        <div class="project-item">
+            <h4>@p.ProjectTitle</h4>
+            <tag>@p.Context</tag>
+            <tag>@(p.TeamName != "" ? p.TeamName + ", " : "")Team of @p.TeamSize</tag>
+            <p>Technologies: @string.Join(", ", p.Technologies)</p>
+            <p>Description: @p.ProjDescription</p>
+    
+        </div>
     }
 </div>
+
+@* footer: last edited? *@

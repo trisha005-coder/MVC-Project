@@ -13,6 +13,7 @@ public class JProfileController : Controller
         
         ViewBag.Titles = new JProfileData().GetTitles();
         ViewBag.Quotes = new JProfileData().GetQuotes();
+        ViewBag.Status = "How to make this about me page";
 
         return View(JoannaProfile);
     }

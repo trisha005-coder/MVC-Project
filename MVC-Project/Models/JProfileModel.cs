@@ -12,7 +12,7 @@ namespace MVC_Project.Models
         // Beside Infobox section
         public List<JInterestModel> Interests { get; set; } = new List<JInterestModel>();
         // Project Gallery section
-        public List<JProjectModel> Project { get; set; } = new List<JProjectModel>();
+        public List<JProjectModel> Projects { get; set; } = new List<JProjectModel>();
     }
 
     public class JProjectModel

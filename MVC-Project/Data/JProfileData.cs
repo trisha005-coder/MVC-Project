@@ -76,7 +76,7 @@ namespace MVC_Project.Data
                 },
                 new JInterestModel { Interest = "Horror Video Essays" },
             },
-            Project =
+            Projects =
             {
                 new JProjectModel
                 {
