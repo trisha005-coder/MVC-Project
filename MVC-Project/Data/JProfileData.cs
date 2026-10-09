@@ -167,7 +167,7 @@ namespace MVC_Project.Data
                 new JQuoteModel
                 {
                     Quote = "It's you. Despite everything, it's still you.",
-                    Author = "/Undertale"
+                    Author = "Undertale"
                 }  
             };
         }
