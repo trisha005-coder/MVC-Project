@@ -1,0 +1,123 @@
+﻿@model MVC_Project.Models.Details
+
+@{
+    ViewData["Title"] = "About Me";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/wwwroot/css/Profile.css" />
+}
+
+<div class="profile-container">
+    <header class="profile-header">
+        <div class="cover-photo"></div>
+        <div class="profile-avatar-row">
+            <img src="~/Images/3d9aff14-8ac4-4de9-a73b-f1aaee7003eb.jpg" class="photo-avatar" style="width: 100px; height: 100px; object-fit: cover; object-position: top; border-radius: 50%;"/>
+            <div class="profile-intro">
+                <h2>All About Trisha</h2>
+                <p>Who is she and what can she do?</p>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+
+       <h3>Here are the details about me.</h3>
+       <p>My name is Trisha Mae A. Mercado. I am still a computer science student having a will to learn more about programming.<br />My experience in this computer science life is not that good but I am still learning.</p>
+</div>
+
+<div class="two-column-layout">
+    <div class="column">
+        <h3>Details about me:</h3>
+        <p><strong>Name:</strong> @Model.FullName</p>
+        <p><strong>Age:</strong> @Model.Age</p>
+        <p><strong>Email Address:</strong> @Model.emailAdd</p>
+        <p><strong>Conact Number:</strong> @Model.ContactNo</p>
+        <p><strong>Home Address:</strong> @Model.Address</p>
+    </div>
+    <div class="column">
+        <h3>My Qualities:</h3>
+        <ul>
+            @foreach (var myquality in Model.Qualities)
+            {
+                <li>@myquality</li>
+            }        
+        </ul>
+        <h4>My Skills:</h4>
+        <ul>
+            @foreach (var myskill in Model.Skills)
+            {
+                <li>@myskill</li>
+            }
+        </ul>
+        <h5>My Hobbies I Like:</h5>
+        <ul>
+            @foreach (var myhobby in Model.MyHobbies)
+            {
+                <li>@myhobby</li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="info-group">
+    <label>GitHub Profile</label>
+    <br />
+    <span><a href="https://github.com/trisha005-coder">trisha005-coder</a></span>
+</div>
+
+<style>
+    .two-column-layout{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .profile-container {
+        max-width: 1100px;
+        margin: 3rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #440496;
+        padding: 4px 7px 2px 4px;
+    }
+
+    .profile-header {
+        background: #00ffff;
+        border-radius: 50rem;
+        overflow: hidden;
+        box-shadow: rgb(1, 23, 129) 0 10px 10px;
+        margin-bottom: 3rem;
+    }
+
+    .profile-avatar-row {
+        display: flex;
+        align-items: center;
+        padding: 2rem 3rem;
+        margin-top: 0px;
+        position: relative;
+        flex-wrap: wrap;
+        gap: 1.75rem;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        min-height: 100px;
+        
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+       
+        color: #58cdfa;
+        background-color: #001b85;
+        overflow-x: hidden;
+        text-rendering: optimizeLegibility;
+    }
+</style>

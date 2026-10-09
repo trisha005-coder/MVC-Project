@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using AspNetCoreGeneratedDocument;
 using Microsoft.AspNetCore.Mvc;
 using MVC_Project.Models;
 
@@ -11,9 +12,20 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Profile()
     {
-        return View();
+        var Model = new Details
+        {
+            FullName = "Trisha Mae A. Mercado",
+            Age = 21,
+            emailAdd = "trishamaemercado06@gmail.com",
+            ContactNo = "09169586419",
+            Address = "Antipolo City",
+            Qualities = new List<string> { "Good communication skills", "Responsible", "Can handle tasks efficiently", "Honest", },
+            Skills = new List<string> { "C", "Java", "Python", "SQL", "C#" },
+            MyHobbies = new List<string> { "Drawing", "Reading", "Playing with pet cats", "Listening to music" }
+        };
+        return View(Model);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -21,4 +33,6 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
 }
